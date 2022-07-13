@@ -11,14 +11,15 @@ namespace TurnupPortal.Pages
 	{
 		public void CreateEmployee(IWebDriver driver)
 		{
-
+			IWebElement buttonCreate = driver.FindElement(By.LinkText("Create"));
 			IWebElement nameCheck = driver.FindElement(By.XPath("//tbody/tr[last()]/td[1]"));
 			IWebElement usernameCheck = driver.FindElement(By.XPath("//tbody/tr[last()]/td[2]"));
 			IWebElement firstName = driver.FindElement(By.Id("FirstName"));
+			IWebElement contactTextbox = driver.FindElement(By.Id("EditContactButton"));
 
 			//Thread.Sleep(1000);
 			//Click button Create
-			IWebElement buttonCreate = driver.FindElement(By.LinkText("Create"));
+
 			buttonCreate.Click();
 			Thread.Sleep(1000);
 
@@ -31,7 +32,6 @@ namespace TurnupPortal.Pages
 			usernameTextbox.SendKeys("johnlennon");
 
 			//Send text to Contact textbox
-			IWebElement contactTextbox = driver.FindElement(By.Id("EditContactButton"));
 			contactTextbox.Click();
 			
 			//Switch to Contact frame
