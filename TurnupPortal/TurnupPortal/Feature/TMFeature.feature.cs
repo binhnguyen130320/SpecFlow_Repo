@@ -35,8 +35,8 @@ namespace TurnupPortal.Feature
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Feature", "TMFeature", "As a TurnUp portal admin\nI would like to create, edit and delete Time and Meteria" +
-                    "lrecords\nso that i can manage Employee\'s time and materials successfully", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Feature", "TMFeature", "As a TurnUp portal admin\r\nI would like to create, edit and delete Time and Meteri" +
+                    "alrecords\r\nso that i can manage Employee\'s time and materials successfully", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         

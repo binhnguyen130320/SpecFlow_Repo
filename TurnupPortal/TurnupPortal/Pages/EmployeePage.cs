@@ -11,6 +11,11 @@ namespace TurnupPortal.Pages
 	{
 		public void CreateEmployee(IWebDriver driver)
 		{
+
+			IWebElement nameCheck = driver.FindElement(By.XPath("//tbody/tr[last()]/td[1]"));
+			IWebElement usernameCheck = driver.FindElement(By.XPath("//tbody/tr[last()]/td[2]"));
+			IWebElement firstName = driver.FindElement(By.Id("FirstName"));
+
 			//Thread.Sleep(1000);
 			//Click button Create
 			IWebElement buttonCreate = driver.FindElement(By.LinkText("Create"));
@@ -33,7 +38,6 @@ namespace TurnupPortal.Pages
 			driver.SwitchTo().Frame(0);
 			
 			//Input contact
-			IWebElement firstName = driver.FindElement(By.Id("FirstName"));
 			firstName.SendKeys("John");
 			
 			IWebElement lastName = driver.FindElement(By.Id("LastName"));
@@ -119,8 +123,6 @@ namespace TurnupPortal.Pages
 			gotoLastPageButton.Click();
 			
 			//Check if record created.
-			IWebElement nameCheck = driver.FindElement(By.XPath("//tbody/tr[last()]/td[1]"));
-			IWebElement usernameCheck = driver.FindElement(By.XPath("//tbody/tr[last()]/td[2]"));
 			Assert.That(nameCheck.Text == "John Lennon", "Actual name and expected name do not match");
 			Assert.That(usernameCheck.Text == "johnlennon", "Actual username and expected username do not match");
 		}
