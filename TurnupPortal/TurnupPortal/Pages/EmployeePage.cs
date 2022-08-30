@@ -13,6 +13,7 @@ namespace TurnupPortal.Pages
 		{
 			IWebElement buttonCreate = driver.FindElement(By.LinkText("Create"));
 			IWebElement contactTextbox = driver.FindElement(By.Id("EditContactButton"));
+
 			
 			//github3
 			IWebElement firstName = driver.FindElement(By.Id("FirstName"));
@@ -24,6 +25,7 @@ namespace TurnupPortal.Pages
 			IWebElement usernameTextbox = driver.FindElement(By.Id("Username"));
 
 			Thread.Sleep(1000);
+      
 			//Click button Create
 
 			buttonCreate.Click();
@@ -45,6 +47,7 @@ namespace TurnupPortal.Pages
 			driver.SwitchTo().Frame(0);
 			
 			//Input contact
+
 			firstName.SendKeys("John");
 			
 			IWebElement lastName = driver.FindElement(By.Id("LastName"));
@@ -128,8 +131,7 @@ namespace TurnupPortal.Pages
 			//Click go to Last page
 			IWebElement gotoLastPageButton = driver.FindElement(By.XPath("//span[contains(text(),'Go to the last page')]"));
 			gotoLastPageButton.Click();
-			Thread.Sleep(1000);
-
+			
 			//Check if record created.
 			IWebElement nameCheck = driver.FindElement(By.XPath("//tbody/tr[last()]/td[1]"));
 			IWebElement usernameCheck = driver.FindElement(By.XPath("//tbody/tr[last()]/td[2]"));
@@ -140,7 +142,7 @@ namespace TurnupPortal.Pages
 		public void EditEmployee(IWebDriver driver)
 		{
 			//Click go to Last page
-			Thread.Sleep(1500);
+			//Thread.Sleep(1500);
 			driver.FindElement(By.XPath("//span[contains(text(),'Go to the last page')]")).Click();
 			Thread.Sleep(1500);
 
